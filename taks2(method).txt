@@ -1,0 +1,34 @@
+using System;
+
+namespace string_to_char
+{
+    class Program
+
+    {
+
+        //IsPrime metodu - parametr olaraq ineteger value qebul edir.Gonderilims integer deyerin sade
+        //    olub olmadigini qaytarir.Eded sadedirse true, deyilse false qayitmalidir
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Eded Daxil Edin");
+            int a;
+            int.TryParse(Console.ReadLine(), out a);
+            Console.WriteLine(IntPrime(a));
+
+        }
+        static bool IntPrime(int a)
+        {
+
+            for (int i = 2; i < a / 2; i++)
+            {
+                if (a % i == 0)
+                {
+                    return true;
+                }
+
+            }
+            return false;
+
+        }
+    }
+}

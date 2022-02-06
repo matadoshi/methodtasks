@@ -1,0 +1,60 @@
+
+using System;
+
+
+namespace string_to_char
+{
+    class Program
+    {
+        //CalcAvg metodu - Gondeirlmis imtahanlar qiymeti siyahisina(integer array) esasen 
+        //hemin qiymetlerin ortalamasini qaytaran metod yazin.Main metodunda bu metodu call edib,
+        //burdan qayidan deyere esasen ortalama 60-dan boyukdursa 
+        //console-da "mezun oldunuz" eks halda "mezun ola bilmediniz" yazisi yazdirin
+        static void Main(string[] args)
+        {
+            if (Average(FillArray()) > 60)
+            {
+                Console.WriteLine($"Imtahandan Kecdiniz");
+            }
+            else
+            {
+                Console.WriteLine($"Imtahan Kesilmisiniz");
+            }
+
+
+        }
+
+        static int[] FillArray()
+        {
+            int size;
+            Console.WriteLine("Qiymetlerin sayini daxil edin");
+            int.TryParse(Console.ReadLine(), out size);
+            Console.WriteLine("Qiymetleri daxil edin");
+
+            int[] arr = new int[size];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                int.TryParse(Console.ReadLine(), out arr[i]);
+
+            }
+            return arr;
+
+        }
+        static double Average(int[] arr)
+        {
+            double avg = 0;
+            int sum = 0;
+            foreach (int item in arr)
+            {
+                sum += item;
+
+            }
+            avg = (double)sum / arr.Length;
+            return avg;
+        }
+
+
+    }
+
+
+}
